@@ -13,6 +13,9 @@ Before joining SUT I got my bachelor's degree in Computer Engineeing at Semnan U
 ## Research interests:
 
 * 3D Computer Vision
+* Semantic Segmentation and Object detection
+* Graph Neural Networks
+* Natural Language Processing
 
 
 
