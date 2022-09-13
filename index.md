@@ -8,7 +8,7 @@ Before joining SUT I got my bachelor's degree in Computer Engineeing at Semnan U
 
 [linkedin](https://www.linkedin.com/in/hassan-hamidi-he/)
 
-[My CV](./MY_CV.pdf)
+[My CV](./CV_Hassan_Hamidi.pdf)
 
 ## Research interests:
 
