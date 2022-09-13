@@ -3,5 +3,5 @@ plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 title: Hassan Hamidi
 description: Contact me at "hhamidi.he@gmail.com" 
-logo: ./mypic.jpg
+logo: ./mypic1.png
 google_analytics: UA-199229816-1
