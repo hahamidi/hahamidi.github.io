@@ -7,7 +7,8 @@ The webpage is styled using a theme originally created by [Lia Bogoev](http://li
 ### Setting Up This Template for Your Own Website
 To use this template for your own site, follow these steps:
 - Fork this repository and rename it to `<yourusername>.github.io`.
-- Install the `vscode-live-server-plus-plus` extension in Visual Studio Code.
+- Install the `Live Server` extension in Visual Studio Code to enable real-time page reloads as you edit your site. You can find the extension [here](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+
 - Open the Visual Studio Code interface and start a local server by selecting the option from the lower taskbar.
 - Modify the content as desired. Save your changes to view them in your web browser.
 - Once you are satisfied with the updates, push the changes to your GitHub repository.
