@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Point Cloud Semantic Segmentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px auto;
+            max-width: 800px;
+            line-height: 1.6;
+            font-size: 18px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 24px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #34495e;
+        }
+        p {
+            text-align: justify;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #95a5a6;
+        }
+        .keywords {
+            font-style: italic;
+            color: #16a085;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Abstract: </h1>
+        <h2>Multi-Modal Knowledge Distillation for Point Cloud Semantic Segmentation</h1>
+        
+    </header>
+    <section>
+        <p>
+            One of the most common forms of three-dimensional data is point clouds. In addition to its high flexibility in
+            storing three-dimensional space, this type of data is the closest type of data to the output of three-dimensional sensors.
+            Semantic segmentation of point clouds is a fundamental operation on this type of data, with applications in robotics,
+            self-driving cars, virtual reality, remote sensing, and other fields that work with this type of data. Since deep learning
+            models require abundant data for training, this type of data is not an exception to this rule with these models.
+        </p>
+        <p>
+            However, the problem is that collecting and labeling this type of data is more difficult and costly compared to other types
+            of data. Therefore, in extensive research in this area, attempts have been made to improve this problem using methods
+            such as semi-supervised learning, self-supervised learning, few-shot learning, and other types of limited-supervise
+            learning approach. In these methods, less attention has been paid to the fact that there are abundant capacities in the
+            field of two-dimensional images, and we can use these capacities to improve the performance of point cloud models.
+        </p>
+        <p>
+            Since each image is a kind of mapping of three-dimensional points onto a two-dimensional plane, and it is also common to
+            have several cameras recording two-dimensional images of space alongside point cloud sensors, it is not unexpected to
+            assume that we usually have two-dimensional images of these point clouds. Therefore, in this study, a framework has
+            been proposed to implicitly incorporate the knowledge that exists in two-dimensional images and models into the
+            process of training a semantic segmentation model of point clouds so that the model can improve its accuracy and
+            efficiency without requiring more data.
+        </p>
+        <p>
+            The proposed framework is designed based on the knowledge distillation and teacher-student methods and can be
+            easily applied to any semantic segmentation model of point clouds regardless of its type. The results of the proposed
+            approach on the well-known S3DIS dataset show a 7% increase in the MIoU metric on a base and common model for
+            point cloud semantic segmentation without increasing the number of weights and training data for this model.
+        </p>
+    </section>
+    <footer>
+        <p class="keywords">Keywords: 3D Computer Vision, Point Cloud, Semantic Segmentation, Limited-Supervised Learning</p>
+    </footer>
+    <section>
+        <h2 onclick="toggleResultsSection()" style="cursor: pointer;">
+            <span id="resultsToggleIcon" style="user-select: none;">➕</span>
+            Table of Results
+        </h2>
+        <div id="resultsContent" style="display: none;">
+        <table style="border: 2px solid black; text-align: center; width: 100%; border-collapse: collapse;">
+            <tr>
+                <th style="border: 1px solid black; text-align: center;">Category</th>
+                <th style="border: 1px solid black; text-align: center;">Baseline Point Cloud Model</th>
+                <th style="border: 1px solid black; text-align: center;">Our Model*</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center;">Desk</td>
+                <td style="border: 1px solid black; text-align: center;">62.5</td>
+                <td style="border: 1px solid black; text-align: center; font-weight: bold;">68.5 <span style="color: green;">↑6.0</span></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center;">Clutter</td>
+                <td style="border: 1px solid black; text-align: center;">52.5</td>
+                <td style="border: 1px solid black; text-align: center; font-weight: bold;">58.1 <span style="color: green;">↑5.6</span></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center;">Chair</td> 
+                <td style="border: 1px solid black; text-align: center;">85.1</td>
+                <td style="border: 1px solid black; text-align: center; font-weight: bold;">87.3 <span style="color: green;">↑2.2</span></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center;">Board</td>
+                <td style="border: 1px solid black; text-align: center;">14.0</td>
+                <td style="border: 1px solid black; text-align: center; font-weight: bold;">19.3 <span style="color: green;">↑5.3</span></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center;">Bookshelf</td>
+                <td style="border: 1px solid black; text-align: center;">50.1</td>
+                <td style="border: 1px solid black; text-align: center; font-weight: bold;">53.2 <span style="color: green;">↑3.1</span></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center;">Ceiling</td>
+                <td style="border: 1px solid black; text-align: center;">93.3</td>
+                <td style="border: 1px solid black; text-align: center; font-weight: bold;">94.8 <span style="color: green;">↑1.5</span></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center;">Floor</td>
+                <td style="border: 1px solid black; text-align: center;">95.9</td>
+                <td style="border: 1px solid black; text-align: center; font-weight: bold;">97.0 <span style="color: green;">↑1.1</span></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center;">Wall</td>
+                <td style="border: 1px solid black; text-align: center;">66.7</td>
+                <td style="border: 1px solid black; text-align: center; font-weight: bold;">72.1 <span style="color: green;">↑5.4</span></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center;">Beam</td>
+                <td style="border: 1px solid black; text-align: center;">80.5</td>
+                <td style="border: 1px solid black; text-align: center; font-weight: bold;">86.8 <span style="color: green;">↑6.3</span></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center;">Column</td>
+                <td style="border: 1px solid black; text-align: center;">37.6</td>
+                <td style="border: 1px solid black; text-align: center; font-weight: bold;">55.8 <span style="color: green;">↑18.2</span></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center;">Window</td>
+                <td style="border: 1px solid black; text-align: center;">67.5</td>
+                <td style="border: 1px solid black; text-align: center; font-weight: bold;">76.8 <span style="color: green;">↑9.3</span></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center;">Door</td>
+                <td style="border: 1px solid black; text-align: center;">53.8</td>
+                <td style="border: 1px solid black; text-align: center; font-weight: bold;">66.7 <span style="color: green;">↑12.9</span></td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black; text-align: center;">Table</td>
+                <td style="border: 1px solid black; text-align: center;">66.5</td>
+                <td style="border: 1px solid black; text-align: center; font-weight: bold;">68.5 <span style="color: green;">↑2.0</span></td>
+            </tr>
+            
+            <caption style="caption-side: bottom;">
+                <p style=" font-style: italic;text-align: center;">Comparison of Performance (MIoU): Our Model vs. Baseline Point Cloud Model</p>
+                <p style=" font-style: italic;text-align: center;">The architecture of our model and the baseline is the same, but our method has improved performance by approximately 7% on average.</p>
+            </caption>
+
+        </table>
+    </div>
+</section>
+    <section>
+        <h3 onclick="toggleSection()" style="cursor: pointer;">
+            <span id="toggleIcon" style="user-select: none;">➕</span>
+            Confusion Matrix of Classes
+        </h3>
+        <div id="toggleContent" style="display: none;">
+            <table style="border: 2px solid black; width: 100%; border-collapse: collapse;">
+                <!-- Your existing table rows here -->
+            </table>
+            <div style="text-align: center; margin-top: 20px;">
+                <figure>
+                    <img src="/projects/thesis/just3d.PNG" alt="Our Model Results" style="width: 100%;">
+                    <figcaption>Results from Baseline Point Cloud Model</figcaption>
+                </figure>
+                <figure>
+                    <img src="/projects/thesis/techear_student_sc.PNG" alt="Baseline Model Results" style="width: 100%;">
+                    <figcaption>Results from Our Model</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    <script>
+        function toggleSection() {
+            var content = document.getElementById("toggleContent");
+            var icon = document.getElementById("toggleIcon");
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                icon.textContent = '➖'; // Change to 'minus' symbol
+            } else {
+                content.style.display = "none";
+                icon.textContent = '➕'; // Change back to 'plus' symbol
+            }
+        }
+    </script>
+    <script>
+        function toggleResultsSection() {
+            var content = document.getElementById("resultsContent");
+            var icon = document.getElementById("resultsToggleIcon");
+            if (content.style.display === "none") {
+                content.style.display = "block";
+                icon.textContent = '➖'; // Change to 'minus' symbol
+            } else {
+                content.style.display = "none";
+                icon.textContent = '➕'; // Change back to 'plus' symbol
+            }
+        }
+    </script>
+    
+    
+    
+
+</body>
+</html>
