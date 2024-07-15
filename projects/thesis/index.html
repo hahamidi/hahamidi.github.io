@@ -5,14 +5,95 @@
     <meta charset="UTF-8">
     <link rel="icon" href="/assets/img/main.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is the personal website of Hassan Hamidi">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons" />
+    <link rel="stylesheet" href="/assets/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="/cv/">
+  <!-- Header -->
+  <nav id="navbar" class="navbar fixed-top navbar-expand-md grey lighten-5 z-depth-1 navbar-light">
+    <div class="container-fluid p-0">
+      
+        <div class="row ml-1 ml-sm-0">
+          <span class="contact-icon text-center" style="line-height: 1em;">
+            <a href="mailto:hhamidi.he@gmail.com"><i class="fa fa-envelope-square gm-icon"></i></a>
+            <a href="https://github.com/hahamidi" target="_blank" title="GitHub"><i class="fab fa-github-square gh-icon"></i></a>
+            <a href="https://www.linkedin.com/in/hassan-hamidi-he/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin li-icon"></i></a>
+            <!-- <a href="https://twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter-square tw-icon"></i></a> -->
+          </span>
+        </div>
+      
+      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              about
+            
+            </a>
+          </li>
+
+             <li class="nav-item ">
+                  <a class="nav-link" href="/cv/">
+                    curriculum vitae
+                    
+                  </a>
+              </li>
+              <li class="nav-item navbar-active font-weight-bold">
+                <a class="nav-link" href="/">
+                  M.sc Thesis
+                  
+                    <span class="sr-only">(current)</span>
+                  
+                </a>
+              </li>
+            
+          
+            <!--
+          
+            
+              <li class="nav-item ">
+                  <a class="nav-link" href="/projects/">
+                    projects
+                    
+                  </a>
+              </li>
+            
+          
+            
+              <li class="nav-item ">
+                  <a class="nav-link" href="/publications/">
+                    publications
+                    
+                  </a>
+              </li>
+            
+          
+            
+              <li class="nav-item ">
+                  <a class="nav-link" href="/teaching/">
+                    teaching
+                    
+                  </a>
+              </li>--> 
+            
+          
+            
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
     <title>Point Cloud Semantic Segmentation</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            /* font-family: Arial, sans-serif; */
             margin: 40px auto;
             max-width: 800px;
             line-height: 1.6;
-            font-size: 18px;
+            /* font-size: 18px; */
             color: #333;
             padding: 0 25px;
         }
@@ -50,7 +131,15 @@
     </style>
 </head>
 <body>
-    <header>
+    
+    
+      <!-- Scrolling Progress Bar -->
+
+
+  <!-- Content -->
+  
+     <!-- add margin-->
+    <header style="margin-top: 100px;">
         <h1>Abstract: </h1>
         <h2>Multi-Modal Knowledge Distillation for Point Cloud Semantic Segmentation</h1>
         
@@ -172,13 +261,13 @@
             </caption>
 
         </table>
-    </div>
+    
 </section>
     <section>
-        <h3 onclick="toggleSection()" style="cursor: pointer;">
+        <h2 onclick="toggleSection()" style="cursor: pointer;">
             <span id="toggleIcon" style="user-select: none;">➕</span>
             Confusion Matrix of Classes
-        </h3>
+        </h2>
         <div id="toggleContent" style="display: none;">
             <table style="border: 2px solid black; width: 100%; border-collapse: collapse;">
                 <!-- Your existing table rows here -->
@@ -195,6 +284,7 @@
             </div>
         </div>
     </section>
+  </div>
     <script>
         function toggleSection() {
             var content = document.getElementById("toggleContent");
