@@ -1,0 +1,96 @@
+/* ==========================================================
+   Interactive tile background
+   Tiles light up under the cursor and fade out when it leaves.
+   A faint grid follows the cursor. Both stay out of the central
+   content column. Tweak the variables below to change the look.
+   ========================================================== */
+:root {
+  /* Base background colour behind the whole page */
+  --tile-bg-color: #ffffff;
+
+  /* Tile highlight colour when hovered (reference site uses #22c55e;
+     this site's own accent green is #7cb342) */
+  --tile-hover-color: #22c55e;
+
+  /* Tile opacity when highlighted (0-1) */
+  --tile-hover-opacity: 0.35;
+
+  /* Size of each tile in pixels */
+  --tile-size: 128px;
+
+  /* Fade timings and easing */
+  --tile-fade-in-duration: 500ms;
+  --tile-fade-out-duration: 1000ms;
+  --tile-fade-in-easing: cubic-bezier(0.12, 0.72, 0.69, 0.83);
+  --tile-fade-out-easing: cubic-bezier(1.0, 0.5, 0.9, 0.83);
+
+  /* Grid overlay: 1 = enabled, 0 = disabled */
+  --grid-enabled: 1;
+  --grid-line-color: rgba(0, 0, 0, 0.15);
+  --grid-line-width: 1px;
+
+  /* Radius of the visible grid around the cursor, and its edge fade */
+  --grid-radius: 256px;
+  --grid-fade-size: 150px;
+
+  /* Cursor smoothing (0-1). Lower = more lag, 1 = no smoothing */
+  --grid-smoothing: 0.17;
+
+  /* Central content column where tiles/grid never appear.
+     Matches the max-width of .content in main.css */
+  --content-column-width: 800px;
+  --content-column-margin: 32px;
+}
+
+#tile-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: var(--tile-bg-color);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#tile-background .tile-grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+#tile-background .tile {
+  background-color: var(--tile-hover-color);
+  opacity: 0;
+  transition: opacity var(--tile-fade-out-duration) var(--tile-fade-out-easing);
+}
+
+#tile-background .tile.active {
+  opacity: var(--tile-hover-opacity);
+  transition: opacity var(--tile-fade-in-duration) var(--tile-fade-in-easing);
+}
+
+#grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--grid-enabled);
+  background-image:
+    linear-gradient(to right, var(--grid-line-color) var(--grid-line-width), transparent var(--grid-line-width)),
+    linear-gradient(to bottom, var(--grid-line-color) var(--grid-line-width), transparent var(--grid-line-width));
+  background-size: var(--tile-size) var(--tile-size);
+  /* Mask is updated by JavaScript to follow the cursor */
+  -webkit-mask-image: radial-gradient(circle at -1000px -1000px, black 0%, transparent 0%);
+  mask-image: radial-gradient(circle at -1000px -1000px, black 0%, transparent 0%);
+}
+
+/* No hover on touch-only devices, so hide the layers entirely */
+@media (hover: none) {
+  #tile-background, #grid-overlay { display: none; }
+}
