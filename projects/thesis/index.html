@@ -10,83 +10,11 @@
     <link rel="stylesheet" href="/assets/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/tile-background.css">
-    <link rel="canonical" href="/cv/">
+    <link rel="canonical" href="/projects/thesis/">
   <!-- Header -->
-  <nav id="navbar" class="navbar fixed-top navbar-expand-md grey lighten-5 z-depth-1 navbar-light">
-    <div class="container-fluid p-0">
-      
-        <div class="row ml-1 ml-sm-0">
-          <span class="contact-icon text-center" style="line-height: 1em;">
-            <a href="mailto:hhamidi.he@gmail.com"><i class="fa fa-envelope-square gm-icon"></i></a>
-            <a href="https://github.com/hahamidi" target="_blank" title="GitHub"><i class="fab fa-github-square gh-icon"></i></a>
-            <a href="https://www.linkedin.com/in/hassan-hamidi-he/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin li-icon"></i></a>
-            <!-- <a href="https://twitter.com/" target="_blank" title="Twitter"><i class="fab fa-twitter-square tw-icon"></i></a> -->
-          </span>
-        </div>
-      
-      <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse text-right" id="navbarNav">
-        <ul class="navbar-nav ml-auto flex-nowrap">
-          <li class="nav-item">
-            <a class="nav-link" href="/">
-              about
-            
-            </a>
-          </li>
-
-             <li class="nav-item ">
-                  <a class="nav-link" href="/cv/">
-                    curriculum vitae
-                    
-                  </a>
-              </li>
-              <li class="nav-item navbar-active font-weight-bold">
-                <a class="nav-link" href="/">
-                  M.sc Thesis
-                  
-                    <span class="sr-only">(current)</span>
-                  
-                </a>
-              </li>
-            
-          
-            <!--
-          
-            
-              <li class="nav-item ">
-                  <a class="nav-link" href="/projects/">
-                    projects
-                    
-                  </a>
-              </li>
-            
-          
-            
-              <li class="nav-item ">
-                  <a class="nav-link" href="/publications/">
-                    publications
-                    
-                  </a>
-              </li>
-            
-          
-            
-              <li class="nav-item ">
-                  <a class="nav-link" href="/teaching/">
-                    teaching
-                    
-                  </a>
-              </li>--> 
-            
-          
-            
-          
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <!-- Shared header, edit in /assets/includes/header.html -->
+  <div id="site-header"></div>
+  <script src="/assets/js/header.js"></script>
     <title>Point Cloud Semantic Segmentation</title>
     <style>
         body {
@@ -123,9 +51,25 @@
         }
 
 
-    header h1, header h2 {
-        text-align: center;
-    }
+    header h1, header h2, header p {
+            text-align: center;
+        }
+        header h1 {
+            font-size: 28px;
+            margin: 6px 0 10px;
+        }
+        .thesis-kicker {
+            color: #22c55e;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0;
+        }
+        .thesis-meta {
+            color: #7f8c8d;
+            font-size: 15px;
+        }
 
 </style>
 
@@ -141,11 +85,12 @@
   
      <!-- add margin-->
     <header style="margin-top: 100px;">
-        <h1>Abstract: </h1>
-        <h2>Multi-Modal Knowledge Distillation for Point Cloud Semantic Segmentation</h1>
-        
+        <p class="thesis-kicker">M.Sc. Thesis &middot; 2022</p>
+        <h1>Multi-Modal Knowledge Distillation for Point Cloud Semantic Segmentation</h1>
+        <p class="thesis-meta">Sharif University of Technology &middot; Supervised by Prof. Shohreh Kasaei</p>
     </header>
     <section>
+        <h2>Abstract</h2>
         <p>
             One of the most common forms of three-dimensional data is point clouds. In addition to its high flexibility in
             storing three-dimensional space, this type of data is the closest type of data to the output of three-dimensional sensors.
@@ -189,10 +134,10 @@
     </footer>
     <section>
         <h2 onclick="toggleResultsSection()" style="cursor: pointer;">
-            <span id="resultsToggleIcon" style="user-select: none;">➕</span>
+            <span id="resultsToggleIcon" style="user-select: none;">➖</span>
             Table of Results
         </h2>
-        <div id="resultsContent" style="display: none;">
+        <div id="resultsContent" style="display: block;">
         <table style="border: 2px solid black; text-align: center; width: 100%; border-collapse: collapse;">
             <tr>
                 <th style="border: 1px solid black; text-align: center;">Category</th>
@@ -275,10 +220,10 @@
 </section>
     <section>
         <h2 onclick="toggleSection()" style="cursor: pointer;">
-            <span id="toggleIcon" style="user-select: none;">➕</span>
+            <span id="toggleIcon" style="user-select: none;">➖</span>
             Confusion Matrix of Classes
         </h2>
-        <div id="toggleContent" style="display: none;">
+        <div id="toggleContent" style="display: block;">
             <table style="border: 2px solid black; width: 100%; border-collapse: collapse;">
                 <!-- Your existing table rows here -->
             </table>
@@ -325,6 +270,9 @@
     
     
 
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
 <script src="/assets/js/tile-background.js"></script>
 </body>
 </html>
